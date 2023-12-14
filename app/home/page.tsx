@@ -76,7 +76,7 @@ export default function Dashboard(): JSX.Element {
                         <Button color='blue' onClick={() => setOpenModal(true)}>Get Started</Button>
                     </div>
                     <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup" />
+                      <Image src="/logo.png" alt="mockup" width={600} height={200} />
                     </div>
                 </div>
             </section>
@@ -103,12 +103,16 @@ export default function Dashboard(): JSX.Element {
                             <div className="mb-2 block">
                                 <Label htmlFor="tanggal_lahir" value="Tanggal Lahir" />
                             </div>
-                            <DatePicker
+                             <DatePicker
                                 id="tanggal_lahir"
-                                className='text-black rounded bg-gray-100 border-gray-300 w-auto'
+                                className="text-black rounded bg-gray-100 border-gray-300 w-auto"
                                 name="tanggal_lahir"
                                 selected={formData.tanggal_lahir}
-                                onChange={(date: Date | null) => handleDateChange(date)}
+                                onChange={(date) => handleDateChange(date)}
+                                dateFormat="dd/MM/yyyy"
+                                showYearDropdown
+                                showMonthDropdown
+                                dropdownMode="select" // agar dropdown dapat digunakan sebagai elemen select
                                 required
                             />
                         </div>
